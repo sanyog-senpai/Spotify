@@ -1,0 +1,6 @@
+{
+   "editor.fontSize": 14,
+   "editor.tabSize": 2,
+   "workbench.editor.tabSizingFixedMinWidth": 40,
+   "reactSnippets.settings.prettierEnabled": true
+}
