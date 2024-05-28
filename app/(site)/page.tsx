@@ -1,9 +1,16 @@
+import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
+import PageContent from "@/components/PageContent";
 import Sidebar from "@/components/Sidebar";
 import Image from "next/image";
+import { DiVim } from "react-icons/di";
 
-export default function Home() {
+// This page will not be cached and this page will always be up to date
+export const revalidate = 0;
+
+export default async function Home() {
+  const songs = await getSongs()
   return (
     <>
       <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
@@ -21,7 +28,7 @@ export default function Home() {
               Newest songs
             </h1>
           </div>
-          <div>List of Songs</div>
+          <div><PageContent songs={songs}/></div>
         </div>
       </div>
     </>
